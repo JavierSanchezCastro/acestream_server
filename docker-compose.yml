@@ -25,3 +25,6 @@ services:
       - ./front:/front/
     ports:
       - "8000:80"
+    depends_on:
+      server_acestream:
+        condition: service_started
