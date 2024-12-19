@@ -28,4 +28,4 @@ COPY ./acestream.conf /${ACE_STREAM_VERSION}/acestream.conf
 EXPOSE 6878/tcp
 
 # Definir el comando principal para ejecutar el contenedor
-ENTRYPOINT /$ACE_STREAM_VERSION/start-engine --client-console
+ENTRYPOINT /$ACE_STREAM_VERSION/start-engine --client-console @acestream.config
