@@ -22,6 +22,7 @@ RUN wget "https://download.acestream.media/linux/${ACE_STREAM_VERSION}.tar.gz" \
 
 ## Mover AceStream extraído a la carpeta /opt/acestream
 #RUN mv {ACE_STREAM_VERSION} /opt/acestream
+COPY ./acestream.conf /${ACE_STREAM_VERSION}/acestream.conf
 
 # Exponer el puerto de comunicación
 EXPOSE 6878/tcp
