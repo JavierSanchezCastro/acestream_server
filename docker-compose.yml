@@ -1,0 +1,27 @@
+services:
+
+  server_acestream:
+    build:
+      context: ./server
+      args:
+        ACE_STREAM_VERSION: ${ACE_STREAM_VERSION}
+    image: server_acestream
+    container_name: server_acestream
+    restart: always
+    ports:
+      - "6878:6878"
+    tmpfs:
+      - "/dev/disk/by-id:noexec,rw,size=4k"
+    environment:
+      ACE_STREAM_VERSION: ${ACE_STREAM_VERSION}
+
+
+  front_acestream:
+    build: ./front
+    image: front_acestream
+    container_name: front_acestream
+    restart: always
+    volumes:
+      - ./front:/front/
+    ports:
+      - "8000:80"

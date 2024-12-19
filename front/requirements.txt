@@ -1,0 +1,6 @@
+uvicorn
+fastapi
+fastui
+pydantic==2.9.2
+python-multipart
+requests
